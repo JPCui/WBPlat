@@ -1,0 +1,673 @@
+/* ****************** */
+a:focus,input:focus {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-user-modify: read-write-plaintext-only;
+}
+
+/* ****************** */
+html,body,header,footer,nav,article,section,aside,time,code,div,p,ul,ol,li,dl,dd,dt,h1,h2,h3,a,span,strong,em,small,form,label,input,textarea
+	{
+	margin: 0;
+	padding: 0;
+}
+
+ul,ol {
+	list-style: none outside none;
+}
+
+h1,h2,h3,input {
+	font-size: 100%;
+}
+
+img {
+	border: 0 none;
+	vertical-align: middle;
+}
+
+label,input {
+	vertical-align: middle;
+}
+
+a,a:hover {
+	text-decoration: none;
+}
+
+body {
+	overflow-x: hidden;
+	position: relative;
+}
+
+@font-face {
+	font-family: "wb440";
+	font-style: normal;
+	font-weight: normal;
+	src: url("http://h5.sinaimg.cn/weibocn/font/wb440.eot?#iefix")
+		format("embedded-opentype"),
+		url("http://h5.sinaimg.cn/weibocn/font/wb440.woff") format("woff"),
+		url("http://h5.sinaimg.cn/weibocn/font/wb440.ttf") format("truetype"),
+		url("http://h5.sinaimg.cn/weibocn/font/wb440.svg?#wb440")
+		format("svg");
+}
+
+.nav {
+	background: none repeat scroll 0 0 #f9f9f9;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+	display: block;
+	overflow: hidden;
+	position: relative;
+	text-align: center;
+	z-index: 1;
+}
+
+.nav .tit {
+	color: #333333;
+	display: inline-block;
+	font-size: 1.125rem;
+	line-height: 44px;
+	margin: 0;
+	max-width: 75%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+
+.nav .btn {
+	float: right;
+	margin: 0 0 0 -41px;
+}
+
+.nav .btn .icon {
+	display: block;
+	padding: 0 7px;
+}
+
+.nav .btn .icon:before {
+	color: #555;
+	display: block;
+}
+
+.nav .home .icon:before {
+	content: "";
+}
+
+.nav .more .icon:before {
+	content: "";
+}
+
+.nav .back {
+	float: left;
+	margin: 0 -41px 0 0;
+}
+
+.nav .back .icon:before {
+	content: "";
+}
+
+.popup {
+	background: none repeat scroll 0 0 rgba(0, 0, 0, 0.3);
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 1000;
+}
+
+.popup>.wrapper {
+	background: none repeat scroll 0 0 #f8f8f8;
+	border-radius: 5px;
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	left: 20px;
+	padding: 16px 14px;
+	position: absolute;
+	top: 180px;
+	width: 252px;
+}
+
+.popup>.wrapper .title {
+	font-size: 1.125rem;
+	margin: -7px 0 0;
+	text-align: center;
+}
+
+.popup>.wrapper>.info {
+	color: #5d5d5d;
+	display: block;
+	font-size: 15px;
+	line-height: 1.3em;
+	margin: 42px 6px 48px;
+}
+
+.popup>.wrapper>.info:first-child {
+	line-height: 1.5em;
+	margin: 15px 6px 45px;
+}
+
+.popup>.wrapper>.action {
+	overflow: hidden;
+}
+
+.popup>.wrapper>.action>.btn {
+	border-radius: 5px;
+	box-sizing: border-box;
+	float: left;
+	font-size: 17px;
+	line-height: 36px;
+	margin: 0 2% 0 0;
+	text-align: center;
+	width: 48%;
+}
+
+.popup>.wrapper>.action>.btn:nth-of-type(2) {
+	margin: 0 0 0 2%;
+}
+
+.popup>.wrapper>.action>.btn:only-of-type {
+	margin: 0;
+	width: 100%;
+}
+
+.popup>.wrapper>.action>.confirm {
+	background: none repeat scroll 0 0 white;
+	border: 1px solid #ff8200;
+	color: #ff8200;
+}
+
+.popup>.wrapper>.action>.cancel {
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-top-colors: none;
+	background: none repeat scroll 0 0 white;
+	border-color: #d8d8d8 #d1d1d1 #cbcbcb;
+	border-image: none;
+	border-style: solid;
+	border-width: 1px;
+	color: #5d5d5d;
+}
+
+body {
+	background: none repeat scroll 0 0 #f8f8f8;
+	color: #333333;
+}
+
+a {
+	color: #5184bc;
+}
+
+.hid {
+	display: none !important;
+}
+
+.login-wrapper .box .input-clear,.login-wrapper .input-wrapper .input-clear
+	{
+	background: none repeat scroll 0 0 #c8c8c8;
+	border-radius: 8px;
+	height: 16px;
+	position: absolute;
+	right: 30px;
+	top: 13px;
+	width: 16px;
+}
+
+.login-wrapper .box .input-clear:before,.login-wrapper .input-wrapper .input-clear:before,.login-wrapper .box .input-clear:after,.login-wrapper .input-wrapper .input-clear:after
+	{
+	background: none repeat scroll 0 0 white;
+	content: " ";
+	height: 1px;
+	left: 4px;
+	position: absolute;
+	top: 8px;
+	transform: rotateZ(45deg);
+	width: 8px;
+}
+
+.login-wrapper .box .input-clear:after,.login-wrapper .input-wrapper .input-clear:after
+	{
+	transform: rotateZ(-45deg);
+}
+
+.btn {
+	border-radius: 3px;
+	border-style: solid;
+	border-width: 1px;
+	display: block;
+	font-size: 1.0625rem;
+	line-height: 43px;
+	margin: 0 0 15px;
+	text-align: center;
+}
+
+.btn.btnRed {
+	background: none repeat scroll 0 0 #ff8200;
+	border-color: #e86b0f;
+	color: white;
+}
+
+.btn.btnWhite {
+	background: none repeat scroll 0 0 white;
+	border-color: #d8d8d8 #d1d1d1 #cbcbcb;
+	color: #5d5d5d;
+}
+
+.btn.btnWhite.isDisabled {
+	color: rgba(93, 93, 93, 0.3);
+}
+
+.btn.btnGreen {
+	background: none repeat scroll 0 0 #10b524;
+	border-color: #199d18;
+	color: white;
+}
+
+.btn.isDisabled {
+	color: rgba(255, 255, 255, 0.3);
+}
+
+.close {
+	height: 22px;
+	left: 16px;
+	overflow: hidden;
+	position: absolute;
+	text-indent: -300px;
+	top: 13px;
+	width: 22px;
+}
+
+.close:before,.close:after {
+	background: none repeat scroll 0 0 #666666;
+	content: " ";
+	height: 1px;
+	left: 0;
+	position: absolute;
+	top: 10px;
+	transform: rotateZ(45deg);
+	width: 22px;
+}
+
+.close:after {
+	transform: rotateZ(-45deg);
+}
+
+.avatar-wrapper {
+	background-image: url("../images/weibo/signin/default-avatar.png");
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.17);
+	height: 70px;
+	margin: 80px auto 0;
+	overflow: hidden;
+	width: 70px;
+}
+
+@media not all {
+	.avatar-wrapper {
+		background-image: url("../images/weibo/signin/default-avatar_2x.png");
+	}
+}
+
+.avatar-wrapper img {
+	display: block;
+	width: 100%;
+}
+
+@media screen and (device-aspect-ratio: 2/3) {
+	.avatar-wrapper {
+		margin-top: 30px;
+	}
+}
+
+.welcome-wrapper {
+	background-image: url("../images/weibo/signin/index-pic.png");
+	background-position: center 128px;
+	background-repeat: no-repeat;
+	background-size: 169px auto;
+	margin: 0 11px;
+	padding: 375px 0 1px;
+	text-align: center;
+}
+
+@media not all {
+	.welcome-wrapper {
+		background-image: url("../images/weibo/signin/index-pic_2x.png");
+	}
+}
+
+@media screen and (device-aspect-ratio: 2/3) {
+	.welcome-wrapper {
+		background-position: center 95px;
+		padding-top: 287px;
+	}
+}
+
+.welcome-wrapper .label {
+	font-size: 0.875rem;
+}
+
+.welcome-wrapper .action {
+	display: flex;
+	margin: 15px 0;
+	width: 100%;
+}
+
+.welcome-wrapper .action .btn {
+	-moz-box-flex: 1;
+	flex: 1 0 auto;
+	line-height: 42px;
+	margin: 0;
+	text-align: center;
+}
+
+.welcome-wrapper .action .btn:nth-child(1) {
+	margin: 0 7px 0 0;
+}
+
+.welcome-wrapper .action .btn:nth-child(2) {
+	margin: 0 0 0 7px;
+}
+
+.welcome-wrapper .btnQQ {
+	background: none repeat scroll 0 0 white;
+	border-color: #006ce2 #0072ee #0079fe;
+	color: #0079fe;
+}
+
+.welcome-wrapper .btnQQ .icon {
+	background-image: url("../images/weibo/signin/icon.png");
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	background-size: 23px auto;
+	display: inline-block;
+	height: 21px;
+	margin: -3px 10px 0 -10px;
+	vertical-align: middle;
+	width: 19px;
+}
+
+@media not all {
+	.welcome-wrapper .btnQQ .icon {
+		background-image: url("../images/weibo/signin/icon_2x.png");
+	}
+}
+
+.login-wrapper {
+	min-height: 541px;
+	padding: 1px 0;
+}
+
+@media screen and (device-aspect-ratio: 2/3) {
+	.login-wrapper {
+		min-height: 453px;
+	}
+}
+
+.login-wrapper form {
+	margin: 27px 0 20px;
+}
+
+.login-wrapper form .btn {
+	margin: 20px 16px 15px;
+}
+
+@media screen and (device-aspect-ratio: 2/3) {
+	.login-wrapper form {
+		margin-top: 20px;
+	}
+}
+
+.login-wrapper .box {
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-top-colors: none;
+	background: none repeat scroll 0 0 white;
+	border-color: #d7d7d7 -moz-use-text-color;
+	border-image: none;
+	border-style: solid none;
+	border-width: 1px medium;
+	position: relative;
+}
+
+.login-wrapper .box input {
+	background: none repeat scroll 0 0 white;
+	border: medium none;
+	box-sizing: border-box;
+	display: block;
+	font-size: 0.9275rem;
+	outline: medium none;
+	padding: 12px 50px 12px 12px;
+	width: 100%;
+}
+
+.login-wrapper .input-wrapper {
+	border-bottom: 1px solid #dddddd;
+	margin: 0 16px;
+	overflow: hidden;
+}
+
+.login-wrapper .input-wrapper .icon {
+	background-image: url("../images/weibo/signin/icon.png");
+	background-repeat: no-repeat;
+	background-size: 23px auto;
+	float: left;
+	margin: 10px 15px 0 0;
+}
+
+@media not all {
+	.login-wrapper .input-wrapper .icon {
+		background-image: url("../images/weibo/signin/icon_2x.png");
+	}
+}
+
+.login-wrapper .input-wrapper .icon.forName {
+	background-position: 0 -21px;
+	height: 20px;
+	width: 19px;
+}
+
+.login-wrapper .input-wrapper .icon.forPwd {
+	background-position: 0 -41px;
+	height: 21px;
+	width: 19px;
+}
+
+.login-wrapper .input-wrapper .input-box {
+	overflow: hidden;
+	position: relative;
+}
+
+.login-wrapper .input-wrapper input {
+	padding-right: 35px;
+}
+
+.login-wrapper .input-wrapper .input-clear {
+	right: 14px;
+}
+
+.login-wrapper .input-wrapper:last-of-type {
+	border: medium none;
+}
+
+.login-wrapper .shield-tit {
+	font-size: 0.875rem;
+	padding: 10px;
+}
+
+.login-wrapper .vcode {
+	overflow: hidden;
+	padding: 10px;
+}
+
+.login-wrapper .vcode img {
+	float: left;
+	height: 20px;
+	margin: 0 15px 0 0;
+	width: 100px;
+}
+
+.login-wrapper .vcode a {
+	color: #333333;
+	float: left;
+	font-size: 0.875rem;
+}
+
+.login-wrapper .error-label {
+	color: #e24123;
+	font-size: 0.875rem;
+	margin: 5px 12px 0;
+}
+
+.login-wrapper .label {
+	font-size: 0.875rem;
+	margin: 27px 0 0;
+	text-align: center;
+}
+
+@media screen and (device-aspect-ratio: 2/3) {
+	.login-wrapper .label {
+		margin: -5px 0 0;
+	}
+}
+
+.login-wrapper .label a {
+	color: #7c7c7c;
+}
+
+.login-wrapper .footer {
+	font-size: 0.875rem;
+	padding: 20px 0;
+	text-align: center;
+	width: 100%;
+}
+
+@media screen and (device-aspect-ratio: 2/3) {
+	.login-wrapper .footer {
+		padding: 10px 0 5px;
+	}
+}
+
+.login-wrapper .footer a {
+	color: #5184bc;
+}
+
+.login-wrapper .footer a:first-of-type {
+	margin: 0 30px 0 0;
+	position: relative;
+}
+
+.login-wrapper .footer a:first-of-type:after {
+	background: none repeat scroll 0 0 #c8c8c8;
+	content: " ";
+	height: 16px;
+	position: absolute;
+	right: -15px;
+	top: 0;
+	width: 1px;
+}
+
+.vcode-wrapper .info {
+	color: #828282;
+	font-size: 0.875rem;
+	line-height: 1.2em;
+	margin: 15px 12px;
+}
+
+.vcode-wrapper .btn {
+	margin: 20px 10px 15px;
+}
+
+.vcode-wrapper .btn:nth-of-type(2) {
+	margin-top: 0;
+}
+
+.account-wrapper {
+	padding: 1px 16px;
+	position: relative;
+}
+
+.account-wrapper .label {
+	color: #828282;
+	font-size: 0.875rem;
+	min-height: 82px;
+	padding: 38px 0 0;
+	text-align: center;
+}
+
+.account-wrapper .label span {
+	color: #333333;
+	margin: 0 3px;
+}
+
+.nav .btn {
+	border: medium none;
+}
+
+.other-list {
+	background: none repeat scroll 0 0 white;
+	margin: 10px 0 0;
+}
+
+.other-list li {
+	border-bottom: 1px solid #dadada;
+}
+
+.other-list li a {
+	color: #333333;
+	display: block;
+	padding: 9px 20px 10px 10px;
+	position: relative;
+}
+
+.other-list li a .icon {
+	background-image: url("../images/weibo/signin/icon.png");
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	background-size: 23px auto;
+	display: inline-block;
+	height: 23px;
+	margin: 0 10px 0 0;
+	position: relative;
+	top: -1px;
+	vertical-align: middle;
+	width: 23px;
+}
+
+@media not all {
+	.other-list li a .icon {
+		background-image: url("../images/weibo/signin/icon_2x.png");
+	}
+}
+
+.other-list li a .icon.forQQ {
+	background-position: 0 -62px;
+}
+
+.other-list li a .icon.forUC {
+	background-position: 0 -85px;
+}
+
+.other-list li a:after {
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-top-colors: none;
+	border-color: -moz-use-text-color #aaaaaa #aaaaaa -moz-use-text-color;
+	border-image: none;
+	border-right: 1px solid #aaaaaa;
+	border-style: none solid solid none;
+	border-width: medium 1px 1px medium;
+	content: " ";
+	height: 7px;
+	position: absolute;
+	right: 10px;
+	top: 17px;
+	transform: rotateZ(-45deg);
+	width: 7px;
+}
+
+.other-list li:last-of-type {
+	border: medium none;
+}

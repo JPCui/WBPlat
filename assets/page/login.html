@@ -1,0 +1,72 @@
+<!doctype html>
+<html style="height: 100%">
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<link rel="apple-touch-icon"
+	href="http://u1.sinaimg.cn/upload/h5/img/apple-touch-icon.png">
+<title>登录 - 新浪微博</title>
+<meta id="viewport" name="viewport"
+	content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,minimal-ui">
+<link rel="stylesheet" href="../css/login.css?id=201406091907">
+<script type="text/javascript" src="../js/lib/jquery-1.4.js"></script>
+<script type="text/javascript">
+	function login() {
+		var uid = $("#loginName").val();
+		var pwd = $("#loginPassword").val();
+
+		var result = Login.login(uid, pwd);
+		var jsonObj = JSON.parse(result);
+
+		if (jsonObj.code == "200") {
+			window.location.href = jsonObj.to;
+		}
+
+	}
+</script>
+</head>
+<body style="height: 100%">
+	<div class="login-wrapper" id="loginWrapper" style="display:">
+		<!-- 登陆成功跳转页 -->
+		<input type="hidden" name="url" value='http%3A%2F%2Fm.weibo.cn%2F'
+			id="loginSuccessAddress" />
+		<section class="avatar-wrapper" id="avatarWrapper">
+			<!-- 头像 -->
+			<img
+				src="https://passport.sina.cn/signin/avatar?url=z8C%2F3f9%2FVdMRcmu633oikF65Ir3ScO7QsnOaiVSv4mMSdkGI2a4sEqDXmUSYR5vPxcBZlC%2FTLIaQVtqMejH%2F8w%3D%3D"
+				onerror="this.src='/images/weibo/signin/default-avatar.png';"></img>
+		</section>
+		<form>
+			<section class="box">
+				<div class="input-wrapper">
+					<i class="icon forName"></i>
+					<!-- 用户名 -->
+					<p class="input-box">
+						<input type="text" placeholder="邮箱/手机号" id="loginName">
+						<!-- 清除用户名小叉 -->
+						<a href="javascript:;" class="input-clear" id="loginnameclear"></a>
+					</p>
+				</div>
+				<div class="input-wrapper">
+					<i class="icon forPwd"></i>
+					<p class="input-box">
+						<input type="password" placeholder="请输入密码" id="loginPassword">
+					</p>
+				</div>
+			</section>
+			<div id="errorMsg" class="error-label" style="display: none">手机号不能为空</div>
+			<a href="javascript:;" class="btn btnRed" id="loginAction"
+				onClick="login()">登录</a>
+		</form>
+		<p class="label">
+			<a href="#">使用其他方式登录</a>
+		</p>
+		<footer class="footer">
+			<a
+				href="http://m.weibo.cn/reg/index?&vt=4&wm=3349&backURL=http%3A%2F%2Fm.weibo.cn%2F">注册帐号</a><a
+				href="http://m.weibo.cn/setting/forgotpwd?vt=4">忘记密码</a>
+		</footer>
+	</div>
+</body>
+</html>

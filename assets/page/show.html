@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="http://h5.sinaimg.cn" rel="dns-prefetch">
+<link href="http://u1.sinaimg.cn" rel="dns-prefetch">
+<link href="http://ww1.sinaimg.cn" rel="dns-prefetch">
+<link href="http://ww2.sinaimg.cn" rel="dns-prefetch">
+<link href="http://ww3.sinaimg.cn" rel="dns-prefetch">
+<link href="http://ww4.sinaimg.cn" rel="dns-prefetch">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<link href="http://u1.sinaimg.cn/upload/h5/img/apple-touch-icon.png"
+	rel="apple-touch-icon">
+
+<link href="../css/lib/base.css" type="text/css" rel="stylesheet">
+<link href="../css/card/card.css" type="text/css" rel="stylesheet">
+<link href="../css/mod/mods.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="../js/lib/jquery-1.4.js"></script>
+<script type="text/javascript">
+	function show(nextP, pageNum) {
+		try {
+			//var newHtml = '<div class="card card9 line-around"><header class="layout-box media-graphic"><a href="null" class="mod-media size-xs">	<div class="media-main">		<img width="34" height="34" src="http://tp2.sinaimg.cn/1998370765/50/40039495395/0">	</div></a><div class="box-col item-list">	<a href="null" class="item-main txt-l mct-a txt-cut"> <span>那些触心的小情书</span>		<i class="icon icon-vip"></i>	</a>	<div class="item-minor txt-xxs mct-d txt-cut">		<span class="time">null</span> <span class="from">皮皮时光机</span>	</div></div><a class="operate-box" data-act-type="hover"> <i class="icon-font icon-font-arrow-down txt-s"></i></a></header><section class="weibo-detail"><p class="default-content txt-xl">家居配饰师<i class="face face_3 icon_20">[给力]</i> <i class="face face_3 icon_22">[围观]</i> <i class="face face_3 icon_11">[威武]</i> <i class="face face_1 icon_4">[爱你]</i></p></section><footer class="more-detail line-top layout-box box-center-v"><a href="javascript:void(0);" class="box-col txt-s" data-act-type="hover" data-node="forward"><i class="icon-font icon-font-forward"></i><em class="num mct-d">转发(0)</em></a><i class="line-gradient"></i> <a href="javascript:void(0);" class="box-col txt-s" data-act-type="hover" data-node="comment"><i class="icon-font icon-font-comment"></i><em class="num mct-d">评论(0)</em></a><i class="line-gradient"></i> <a href="javascript:void(0);" class="box-col txt-s" data-act-type="hover" data-node="like"><i class="icon icon-likesmall"></i><em class="num mct-d">赞(0)</em></a></footer></div><div class="card card9 line-around"><header class="layout-box media-graphic"><a href="null" class="mod-media size-xs">	<div class="media-main">		<img width="34" height="34" src="http://tp2.sinaimg.cn/2391322817/50/40003902151/0">	</div></a><div class="box-col item-list">	<a href="null" class="item-main txt-l mct-a txt-cut"> <span>不看美女就闹心</span>		<i class="icon icon-vip"></i>	</a>	<div class="item-minor txt-xxs mct-d txt-cut">		<span class="time">null</span> <span class="from">微博 weibo.com</span>	</div></div><a class="operate-box" data-act-type="hover"> <i class="icon-font icon-font-arrow-down txt-s"></i></a></header><section class="weibo-detail"><p class="default-content txt-xl">[亲一口]小三嫂推荐的祛黑头神器 <i class="face face_2 icon_3">[亲亲]</i>天然配方温和不刺激，重点是效果太<i class="face face_3 icon_3">[赞]</i>啦！草莓鼻没有啦，毛孔小了，太神奇了~连小P老师也推荐过呐，今日39元还包邮，爱美的菇娘速抢啊！ <a data-url="http://t.cn/Rh12VYm" href="http://weibo.cn/sinaurl?u=http%3A%2F%2Ft.cn%2FRh12VYm&amp;ep=BpJweyVdt%2C2391322817%2CBjVhioCbF%2C1772743763" class="btn btn-normal btn-surl"><i class="iconimg iconimg-xxs"><img src="http://u1.sinaimg.cn/upload/2014/08/29/timeline_card_small_web_default.png"></i><span class="surl-text">网页链接</span></a></p></section><footer class="more-detail line-top layout-box box-center-v"><a href="javascript:void(0);" class="box-col txt-s" data-act-type="hover" data-node="forward"><i class="icon-font icon-font-forward"></i><em class="num mct-d">转发(0)</em></a><i class="line-gradient"></i> <a href="javascript:void(0);" class="box-col txt-s" data-act-type="hover" data-node="comment"><i class="icon-font icon-font-comment"></i><em class="num mct-d">评论(0)</em></a><i class="line-gradient"></i> <a href="javascript:void(0);" class="box-col txt-s" data-act-type="hover" data-node="like"><i class="icon icon-likesmall"></i><em class="num mct-d">赞(0)</em></a></footer></div><div class="card card9 line-around"><header class="layout-box media-graphic"><a href="null" class="mod-media size-xs">	<div class="media-main">		<img width="34" height="34" src="http://tp2.sinaimg.cn/1497042545/50/5695654394/1">	</div></a><div class="box-col item-list">	<a href="null" class="item-main txt-l mct-a txt-cut"> <span>张国庆看天下</span>		<i class="icon icon-vip"></i>	</a>	<div class="item-minor txt-xxs mct-d txt-cut">		<span class="time">null</span> ';
+			var newHtml = WeibosController.getMainWeibos(nextP, pageNum) + "";
+			$(newHtml).appendTo($("#weibo_content"));
+		} catch (e) {
+			$("#weibo_content").html(e);
+		}
+	}
+	// SCROLL
+	var scrollFlag = 0; //标记是否已经进入滚动
+	$(window).scroll(function() {
+		if(scrollFlag == 1) return;
+		scrollFlag = 1;
+		var $this = $(this),
+		viewH = $(window).height(), //可见高度  
+		scrollH = $(window).scrollTop(),//滚动高度
+		contentH = $(document).height(); //内容高度
+		if(contentH - viewH - scrollH <= 100) { //到达底部100px时,加载新内容  
+			// 这里加载数据..  
+			var lastMid = $("span[class=midArea]:last").html();
+			var nextMid = lastMid - 1;
+			show(nextMid, 1);
+		}
+		scrollFlag = 0;
+	});
+
+	window.onload = function() {
+		// 首次打开网页，获取微博第一页内容
+		show(null, 1);
+	};
+</script>
+</head>
+<body>
+	<div id="weibo_content" class="card-list"></div>
+</body>
+</html>

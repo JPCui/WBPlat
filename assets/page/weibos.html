@@ -1,0 +1,59 @@
+<html style="height: 100%">
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<link rel="apple-touch-icon"
+	href="http://u1.sinaimg.cn/upload/h5/img/apple-touch-icon.png">
+<title>登录 - 新浪微博</title>
+<meta id="viewport" name="viewport"
+	content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,minimal-ui">
+<link rel="stylesheet" href="../css/">
+<script type="text/javascript" src="../js/lib/jquery-1.4.js"></script>
+<script type="text/javascript" src="../js/lib/jquery.cookie.js"></script>
+<script type="text/javascript">
+
+console.log($.cookie("backURL"));
+$.cookie("SUB", "_2AkMjd_SKa8NlrABXnvwUymzgbIlH-jyQK8R8An7oJhMyCBh87lQRqSdz82asmLDZKQ8mOFJ_Se8Qgkugew..");
+$.cookie("_T_WM", "341fb0768102f7eee1bf8c1ff3e3c096");
+$.cookie("WEIBOCN_WM;", "3349");
+$.cookie("backURL", "http%3A%2F%2Fm.weibo.cn%2F");
+$.cookie("gsid_CTandWM", "4uDQe7771S75wby5JDtH5fndt3i");
+$.cookie("H5_INDEX", "0_all");
+$.cookie("H5_INDEX_TITLE", "%E5%A4%A7%E4%BE%A0%E8%A6%81%E5%90%83%E8%82%AF%E5%BE%B7%E5%9F%BA");
+$.cookie("M_WEIBOCN_PARAMS", "uicode%3D20000174%26wm%3D3349%26rl%3D1");
+$.cookie("expires", "Sat, 28-Sep-24 07:06:40 GMT");
+
+//$.cookie("M_WEIBOCN_PARAMS", "");
+$.ajax({
+	type:"get",
+	headers: {
+		"Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+		"Cookies":"gsid_CTandWM=4uDQe7771S75wby5JDtH5fndt3i;_T_WM=ccd0de34d75b8b570858b21772a628c2;SUB=_2AkMjdyQIa8NlrABXnvwUymzgbIlH-jyQK7T-An7oJhMyCBh87go2qScMA8f48-RtEHeVn5f9iH38hSQdDA..",
+		"asd":"123",
+		"Access-Control-Allow-Origin":"http://example.edu",
+		"Access-Control-Allow-Headers":"X-Requested-With"
+	},
+	async: false,
+	url:"http://m.weibo.cn/index/feed?format=cards&page=2&next_cursor=3760881408360700",
+	dataType:"jsonp",
+	jsonp: "",
+    success: function(data, status, xhr) {
+       console.log(data);
+       console.log(status);
+       console.log(xhr);
+    },
+    error: function(data)
+    {
+       console.log(data);
+    }
+});
+
+console.log($.cookie("domain"));
+
+
+</script>
+</head>
+<body style="height: 100%">
+</body>
+</html>
