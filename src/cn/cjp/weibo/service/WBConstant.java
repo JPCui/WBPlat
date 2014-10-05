@@ -18,6 +18,10 @@ public class WBConstant {
 	 * Method : POST
 	 */
 	public static final String LOGIN_URL = "https://passport.sina.cn/sso/login";
+	/**
+	 * 用于发微博时，预上传图片
+	 */
+	public static final String ADD_PIC_URL = "http://m.weibo.cn/mblogDeal/addPic";
 	
 	public static final String LOGIN_SUCCESS = "success";
 	public static final String LOGIN_FAIL = "fail";

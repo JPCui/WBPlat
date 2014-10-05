@@ -19,8 +19,8 @@ public class LoadingActivity extends Activity {
 			public void run() {
 				Intent intent = new Intent(LoadingActivity.this, Whatsnew.class);
 				startActivity(intent);
-				LoadingActivity.this.finish();
-				Toast.makeText(getApplicationContext(), "��¼�ɹ�",
+				finish();
+				Toast.makeText(getApplicationContext(), "登录成功",
 						Toast.LENGTH_SHORT).show();
 			}
 		}, 200);

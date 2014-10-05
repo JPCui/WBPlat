@@ -1,14 +1,19 @@
 package cn.cjp.weibo.activity;
 
+import java.io.File;
 import java.util.ArrayList;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.util.Log;
 import android.view.Display;
 import android.view.Gravity;
 import android.view.KeyEvent;
@@ -25,6 +30,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 import cn.cjp.weibo.R;
 import cn.cjp.weibo.bean.HomeWeibo;
 import cn.cjp.weibo.service.WBConstant;
@@ -324,7 +330,8 @@ public class MainWeixin extends Activity {
 		weibosWebView = new WebView(this);
 
 		// 加载本地中的html
-		weibosWebView.loadUrl("file:///android_asset/page/show.html");
+		weibosWebView.loadUrl("file:///android_asset/page/pub_weibo.html");
+//		weibosWebView.loadUrl("file:///android_asset/page/show.html");
 
 		// 加上下面这段代码可以使网页中的链接不以浏览器的方式打开
 		weibosWebView.setWebViewClient(new WebViewClient());
@@ -363,14 +370,12 @@ public class MainWeixin extends Activity {
 		String html = homeWeibo.toHtml();
 		return html;
 	}
-	
-	public void turnBack(View v)
-	{
+
+	public void turnBack(View v) {
 		this.weibosWebView.goBack();
 	}
-	
-	public void turnFore(View v)
-	{
+
+	public void turnFore(View v) {
 		this.weibosWebView.goForward();
 	}
 
@@ -380,4 +385,77 @@ public class MainWeixin extends Activity {
 		finish();
 	}
 
+	// 
+	String picPath = "";
+	String path = null;
+	
+	/**
+	 * 前台获取到数据后，恢复初始化状态
+	 */
+	public void setPicPath(String picPath)
+	{
+		this.picPath = picPath;
+	}
+	
+	public String getPicPath()
+	{
+		return picPath;
+	}
+	/**
+	 * 前台需要添加图片了
+	 * @return
+	 */
+	public String addPic() {
+		Log.i("CJP", "addPic");
+		// 打开相册，获取图片
+		Intent intent = new Intent();
+		intent.setType("image/*"); /* 开启Pictures画面Type设定为image */
+		intent.setAction(Intent.ACTION_PICK);
+		startActivityForResult(intent, 1); /* 取得相片后返回本画面 */
+		
+		return "";
+	}
+
+	/**
+	 * 选择图片后的回调函数
+	 */
+	@SuppressWarnings("deprecation")
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		if (resultCode == RESULT_OK) {
+			// 上传图片
+			final WBService wbService = new WBService();
+			try {
+				Uri originalUri = data.getData(); //获得图片的uri
+				// 这里开始的第二部分，获取图片的路径：
+				String[] proj = {MediaStore.Images.Media.DATA};
+				Cursor cursor = managedQuery(originalUri, proj, null, null, null);
+				//按我个人理解 这个是获得用户选择的图片的索引值
+				int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+				cursor.moveToFirst();
+				//最后根据索引值获取图片路径
+				path = cursor.getString(column_index);
+				
+				new Thread(new Runnable() {
+					@Override
+					public void run() {
+						picPath = wbService.addPic(new File(path));
+					}
+				}).start();
+				
+				Toast.makeText(this, picPath+"--正在上传图片", Toast.LENGTH_LONG).show();
+			} catch (Exception e) {
+				Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG);
+				picPath = e.getMessage();
+			}
+		}
+		else if(resultCode == RESULT_CANCELED)
+		{
+			picPath = "cancel";
+			Toast.makeText(this, picPath, Toast.LENGTH_LONG).show();
+		}
+		super.onActivityResult(requestCode, resultCode, data);
+	}
+
+	
 }

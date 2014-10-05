@@ -1,7 +1,13 @@
 package cn.cjp.weibo.service;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.json.JSONObject;
@@ -41,8 +47,8 @@ public class WBConnect {
 
 				.data("username", uid)
 				.data("password", pwd)
-//				.data("username", "1367471019@qq.com")
-//				.data("password", "15238771688")
+				// .data("username", "1367471019@qq.com")
+				// .data("password", "15238771688")
 				.data("savestate", "1")
 				.data("ec", "0")
 				.data("pagerefer",
@@ -156,4 +162,141 @@ public class WBConnect {
 		return headUrl;
 	}
 
+	/**
+	 * 上传方法 返回上传完毕的文件名
+	 * 
+	 * @return 如果正常，返回：{"ok":1,"msg":null,"pic_url":
+	 *         "http:\/\/ww4.sinaimg.cn\/thumbnail\/da66c124jw1el0lhc07x7j200w0owmxg.jpg","pic_id":"da66c124jw1el0lhc07x7j200w0owmxg"
+	 *         } <br>
+	 *         如果通信异常，返回：{\"ok\":0,\"msg\":"000"}
+	 */
+	public String upload(String urlStr, String boundary, List<byte[]> data) {
+		try {
+			// 服务器IP(这里是从属性文件中读取出来的)
+			URL url = new URL(urlStr);
+
+			HttpURLConnection uc = (HttpURLConnection) url.openConnection();
+			uc.setConnectTimeout(5000);
+			uc.setReadTimeout(30000);
+			uc.setDoOutput(true);
+			uc.setDoInput(true);
+			uc.setUseCaches(false);
+			uc.setRequestMethod("POST");
+			// 上传图片的一些参数设置
+			uc.setRequestProperty("Accept",
+					"application/json, text/javascript, */*; q=0.01");
+			// uc.setRequestProperty("Accept-Encoding", "gzip, deflate");
+			uc.setRequestProperty("Connection", "keep-alive");
+			uc.setRequestProperty("Content-type",
+					"multipart/form-data; boundary=" + boundary);
+			
+			Map<String, String> cookieMap = WBConstant.LOGIN_COOKIE;
+			String cookieStr = "";
+			for (String key : cookieMap.keySet()) {
+				cookieStr += key + "=" + cookieMap.get(key) + ";";
+			}
+			uc.setRequestProperty(
+					"Cookie",
+					cookieStr);
+			
+			uc.setRequestProperty("Referer", "http://m.weibo.cn/mblog");
+			uc.setRequestProperty("User-Agent",
+					"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:32.0) Gecko/20100101 Firefox/32.0");
+			uc.setRequestProperty("X-Requested-With", "XMLHttpRequest");
+			uc.setDoOutput(true);
+			uc.setUseCaches(true);
+
+			OutputStream out = uc.getOutputStream();
+			for (byte[] bs : data) {
+				out.write(bs);
+			}
+			out.flush();
+			out.close();
+
+			// 读取响应数据
+			int code = uc.getResponseCode();
+
+			String sCurrentLine = "";
+			// 存放响应结果
+			String sTotalString = "";
+			if (code == 200) {
+				java.io.InputStream is = uc.getInputStream();
+				BufferedReader reader = new BufferedReader(
+						new InputStreamReader(is, "UTF-8"));
+				while ((sCurrentLine = reader.readLine()) != null)
+					if (sCurrentLine.length() > 0)
+						sTotalString += sCurrentLine.trim();
+			} else {
+				sTotalString = "{\"ok\":0,\"msg\":" + code + "}";
+			}
+			return sTotalString;
+		} catch (Exception e) {
+			return e.getMessage();
+		}
+	}
+
+	/**
+	 * @param data
+	 * @return 
+	 *         如果正常，返回（{"id":"3762426509592884","ok":1,"msg":"\u53d1\u5e03\u6210\u529f"
+	 *         } ），pic_id为server为图片分配的id
+	 */
+	public String pubWeibo(String data) {
+		try {
+			// 服务器IP(这里是从属性文件中读取出来的)
+			URL url = new URL("http://m.weibo.cn/mblogDeal/addAMblog");
+
+			HttpURLConnection uc = (HttpURLConnection) url.openConnection();
+			uc.setConnectTimeout(5000);
+			uc.setReadTimeout(30000);
+			uc.setDoOutput(true);
+			uc.setDoInput(true);
+			uc.setUseCaches(false);
+			uc.setRequestMethod("POST");
+			// 上传图片的一些参数设置
+			uc.setRequestProperty("Accept",
+					"application/json, text/javascript, */*; q=0.01");
+			uc.setRequestProperty("Connection", "keep-alive");
+			Map<String, String> cookieMap = WBConstant.LOGIN_COOKIE;
+			String cookieStr = "";
+			for (String key : cookieMap.keySet()) {
+				cookieStr += key + "=" + cookies.get(key) + ";";
+			}
+			uc.setRequestProperty("Cookie", cookieStr);
+			uc.setRequestProperty("User-Agent",
+					"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:32.0) Gecko/20100101 Firefox/32.0");
+			uc.setRequestProperty("Referer", "http://m.weibo.cn/mblog");
+			uc.setRequestProperty("X-Requested-With", "XMLHttpRequest");
+			uc.setDoOutput(true);
+			uc.setRequestProperty("Content-type",
+					"application/x-www-form-urlencoded; charset=UTF-8");
+			uc.setUseCaches(true);
+
+			OutputStream out = uc.getOutputStream();
+			out.write(data.getBytes());
+			out.flush();
+			out.close();
+
+			// 读取响应数据
+			int code = uc.getResponseCode();
+
+			String sCurrentLine = "";
+			// 存放响应结果
+			String sTotalString = "";
+			if (code == 200) {
+				java.io.InputStream is = uc.getInputStream();
+				BufferedReader reader = new BufferedReader(
+						new InputStreamReader(is, "UTF-8"));
+				while ((sCurrentLine = reader.readLine()) != null)
+					if (sCurrentLine.length() > 0)
+						sTotalString = sTotalString + sCurrentLine.trim();
+			} else {
+				sTotalString = "{\"ok\":0,\"msg\":" + code + "}";
+			}
+			return sTotalString;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 }

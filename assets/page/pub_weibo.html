@@ -1,0 +1,280 @@
+<head>
+<meta charset="utf-8">
+<link href="http://h5.sinaimg.cn" rel="dns-prefetch">
+<link href="http://u1.sinaimg.cn" rel="dns-prefetch">
+<link href="http://ww1.sinaimg.cn" rel="dns-prefetch">
+<link href="http://ww2.sinaimg.cn" rel="dns-prefetch">
+<link href="http://ww3.sinaimg.cn" rel="dns-prefetch">
+<link href="http://ww4.sinaimg.cn" rel="dns-prefetch">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<link href="http://u1.sinaimg.cn/upload/h5/img/apple-touch-icon.png"
+	rel="apple-touch-icon">
+<title>发微博</title>
+<meta
+	content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0"
+	name="viewport" id="viewport">
+<script>
+	var _loadStart = new Date().getTime();
+</script>
+<link rel="stylesheet" type="text/css" href="../css/lib/base.css">
+<link rel="stylesheet" type="text/css" href="../css/card/cards.css">
+<link rel="stylesheet" type="text/css" href="../css/mod/mods.css">
+<script type="text/javascript" src="../js/lib/jquery-1.4.js"></script>
+
+</head>
+<body style="padding-top: 45px; overflow-x: hidden;">
+	<div class="container" id="box">
+		<div id="view_publisher_">
+			<header class="module-topbar" id="boxId_1412497033928_1"
+				style="position: fixed;">
+				<a data-act-type="hover" title="取消" data-node="back"
+					href="javascript:history.go(-1);" class="fl txt-link">取消</a> <a
+					data-act-type="hover" title="发送" data-node="send"
+					href="javascript:;" class="fr txt-link disable">发送</a>
+				<div class="title-group">
+					<h1 class="title txt-cut">发微博</h1>
+					<h2 class="sub-title">大侠要吃肯德基</h2>
+				</div>
+			</header>
+			<article class="module-publisher" id="boxId_1412497033928_2">
+				<div class="txt-publisher-wrapper">
+					<textarea id="wb_content" placeholder="分享新鲜事..."
+						class="J-textarea txt-publisher" name="content" id="txt-publisher"></textarea>
+				</div>
+				<div class="wrapper-info-publisher">
+					<div class="info-publisher selfclear">
+						<a href="javascript:;" class="icon_wbtype fr"><span
+							class="iconf iconf_compose_public"></span><span class="J-wbtype">公开</span></a><span
+							class="J-limit fr"></span>
+						<aside class="textoverflow pos">
+							<a href="javascript:;" class="icon_pos"><span
+								class="iconf iconf_compose_locateready"></span><span
+								class="pos-info-publisher">插入位置</span></a>
+						</aside>
+					</div>
+				</div>
+				<section class="action-publisher layout-box line-bottom">
+					<div class="box-col">
+						<span class="iconf iconf_compose_picture" onclick="addPic()"></span>
+					</div>
+					<div class="box-col">
+						<span class="iconf iconf_compose_mention"></span>
+					</div>
+					<div class="box-col">
+						<span class="iconf iconf_compose_trend"></span>
+					</div>
+					<div class="box-col">
+						<span class="iconf emotion iconf_compose_emoticon"></span>
+					</div>
+					<div class="box-col">
+						<a href="/mblog/longMblog" class="iconf iconf_compose_longweibo"></a>
+					</div>
+				</section>
+				<aside class="J-faceMain wrapper-face">
+					<div class="facewrapper">
+						<div class="scroller tab-face" style="width: 5396px;">
+							<div class="content-tab-face selfclear" id="face_1"
+								style="width: 1349px;">
+								<i class="face_1 face icon_0" data-face="→_→"></i><i
+									class="face_1 face icon_1" data-face="[呵呵]"></i><i
+									class="face_1 face icon_2" data-face="[嘻嘻]"></i><i
+									class="face_1 face icon_3" data-face="[哈哈]"></i><i
+									class="face_1 face icon_4" data-face="[爱你]"></i><i
+									class="face_1 face icon_5" data-face="[挖鼻屎]"></i><i
+									class="face_1 face icon_6" data-face="[吃惊]"></i><i
+									class="face_1 face icon_7" data-face="[晕]"></i><i
+									class="face_1 face icon_8" data-face="[泪]"></i><i
+									class="face_1 face icon_9" data-face="[馋嘴]"></i><i
+									class="face_1 face icon_10" data-face="[抓狂]"></i><i
+									class="face_1 face icon_11" data-face="[哼]"></i><i
+									class="face_1 face icon_12" data-face="[可爱]"></i><i
+									class="face_1 face icon_13" data-face="[怒]"></i><i
+									class="face_1 face icon_14" data-face="[汗]"></i><i
+									class="face_1 face icon_15" data-face="[害羞]"></i><i
+									class="face_1 face icon_16" data-face="[睡觉]"></i><i
+									class="face_1 face icon_17" data-face="[钱]"></i><i
+									class="face_1 face icon_18" data-face="[偷笑]"></i><i
+									class="face_1 face icon_19" data-face="[笑cry]"></i><i
+									class="face_1 face icon_20" data-face="[doge]"></i><i
+									class="face_1 face icon_21" data-face="[喵喵]"></i><i
+									class="face_1 face icon_22" data-face="[酷]"></i><i
+									class="face_1 face icon_23" data-face="[衰]"></i><i
+									class="face_1 face icon_24" data-face="[闭嘴]"></i><i
+									class="face_1 face icon_25" data-face="[鄙视]"></i><i
+									class="face_1 face icon_26" data-face="[花心]"></i><i
+									class="face_1 face icon_27" data-face="[鼓掌]"></i>
+							</div>
+							<div class="content-tab-face selfclear" id="face_2"
+								style="width: 1349px;">
+								<i class="face_2 face icon_0" data-face="[悲伤]"></i><i
+									class="face_2 face icon_1" data-face="[思考]"></i><i
+									class="face_2 face icon_2" data-face="[生病]"></i><i
+									class="face_2 face icon_3" data-face="[亲亲]"></i><i
+									class="face_2 face icon_4" data-face="[怒骂]"></i><i
+									class="face_2 face icon_5" data-face="[太开心]"></i><i
+									class="face_2 face icon_6" data-face="[懒得理你]"></i><i
+									class="face_2 face icon_7" data-face="[右哼哼]"></i><i
+									class="face_2 face icon_8" data-face="[左哼哼]"></i><i
+									class="face_2 face icon_9" data-face="[嘘]"></i><i
+									class="face_2 face icon_10" data-face="[委屈]"></i><i
+									class="face_2 face icon_11" data-face="[吐]"></i><i
+									class="face_2 face icon_12" data-face="[可怜]"></i><i
+									class="face_2 face icon_13" data-face="[打哈气]"></i><i
+									class="face_2 face icon_14" data-face="[挤眼]"></i><i
+									class="face_2 face icon_15" data-face="[失望]"></i><i
+									class="face_2 face icon_16" data-face="[顶]"></i><i
+									class="face_2 face icon_17" data-face="[疑问]"></i><i
+									class="face_2 face icon_18" data-face="[困]"></i><i
+									class="face_2 face icon_19" data-face="[感冒]"></i><i
+									class="face_2 face icon_20" data-face="[拜拜]"></i><i
+									class="face_2 face icon_21" data-face="[黑线]"></i><i
+									class="face_2 face icon_22" data-face="[阴险]"></i><i
+									class="face_2 face icon_23" data-face="[互粉]"></i><i
+									class="face_2 face icon_24" data-face="[心]"></i><i
+									class="face_2 face icon_25" data-face="[伤心]"></i><i
+									class="face_2 face icon_26" data-face="[猪头]"></i><i
+									class="face_2 face icon_27" data-face="[熊猫]"></i>
+							</div>
+							<div class="content-tab-face selfclear" id="face_3"
+								style="width: 1349px;">
+								<i class="face_3 face icon_0" data-face="[兔子]"></i><i
+									class="face_3 face icon_1" data-face="[握手]"></i><i
+									class="face_3 face icon_2" data-face="[作揖]"></i><i
+									class="face_3 face icon_3" data-face="[赞]"></i><i
+									class="face_3 face icon_4" data-face="[耶]"></i><i
+									class="face_3 face icon_5" data-face="[good]"></i><i
+									class="face_3 face icon_6" data-face="[弱]"></i><i
+									class="face_3 face icon_7" data-face="[不要]"></i><i
+									class="face_3 face icon_8" data-face="[ok]"></i><i
+									class="face_3 face icon_9" data-face="[haha]"></i><i
+									class="face_3 face icon_10" data-face="[来]"></i><i
+									class="face_3 face icon_11" data-face="[威武]"></i><i
+									class="face_3 face icon_12" data-face="[鲜花]"></i><i
+									class="face_3 face icon_13" data-face="[钟]"></i><i
+									class="face_3 face icon_14" data-face="[浮云]"></i><i
+									class="face_3 face icon_15" data-face="[飞机]"></i><i
+									class="face_3 face icon_16" data-face="[月亮]"></i><i
+									class="face_3 face icon_17" data-face="[太阳]"></i><i
+									class="face_3 face icon_18" data-face="[微风]"></i><i
+									class="face_3 face icon_19" data-face="[下雨]"></i><i
+									class="face_3 face icon_20" data-face="[给力]"></i><i
+									class="face_3 face icon_21" data-face="[神马]"></i><i
+									class="face_3 face icon_22" data-face="[围观]"></i><i
+									class="face_3 face icon_23" data-face="[话筒]"></i><i
+									class="face_3 face icon_24" data-face="[奥特曼]"></i><i
+									class="face_3 face icon_25" data-face="[草泥马]"></i><i
+									class="face_3 face icon_26" data-face="[萌]"></i><i
+									class="face_3 face icon_27" data-face="[囧]"></i>
+							</div>
+							<div class="content-tab-face selfclear" id="face_4"
+								style="width: 1349px;">
+								<i class="face_4 face icon_0" data-face="[织]"></i><i
+									class="face_4 face icon_1" data-face="[礼物]"></i><i
+									class="face_4 face icon_2" data-face="[喜]"></i><i
+									class="face_4 face icon_3" data-face="[围脖]"></i><i
+									class="face_4 face icon_4" data-face="[音乐]"></i><i
+									class="face_4 face icon_5" data-face="[绿丝带]"></i><i
+									class="face_4 face icon_6" data-face="[蛋糕]"></i><i
+									class="face_4 face icon_7" data-face="[蜡烛]"></i><i
+									class="face_4 face icon_8" data-face="[干杯]"></i><i
+									class="face_4 face icon_9" data-face="[男孩儿]"></i><i
+									class="face_4 face icon_10" data-face="[女孩儿]"></i><i
+									class="face_4 face icon_11" data-face="[肥皂]"></i><i
+									class="face_4 face icon_12" data-face="[照相机]"></i><i
+									class="face_4 face icon_13" data-face="[浪]"></i><i
+									class="face_4 face icon_14" data-face="[沙尘暴]"></i>
+							</div>
+						</div>
+					</div>
+					<ul class="nav-tab-face selfclear">
+						<li class="current">1</li>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+					</ul>
+				</aside>
+				<div id="pic_preview_box" class="J-preview"
+					style="max-height: 1338px;">
+					<div class="uploadList uploadList_0">
+						<img width="36" height="36"
+							src="http://ww1.sinaimg.cn/square/da66c124jw1el0dmjnemvj200w0owmxg.jpg"
+							picid="da66c124jw1el0dmjnemvj200w0owmxg">
+						<div style="width: 436px; height: 418px;"
+							class="pic-reload iconf loading hid" order="0">
+							<p class="hid">重新上传</p>
+						</div>
+						<span style="left: 414px;"
+							class="pic-dele iconf iconf_navbar_close" order="0"></span>
+					</div>
+					<div id="pic_btn_add"
+						class="add-picture iconf iconf_compose_picadd"
+						style="font-size: 436px;">
+						<input type="file" accept="image/*" name="pic" disabled="true"
+							style="width: 436px; height: 436px;">
+					</div>
+				</div>
+			</article>
+			<div id="boxId_1412497033928_3"></div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		var picWidth = ($(window).width() - 30) / 3;
+
+		var preview_pic = "";
+		preview_pic += "<div class=\"uploadList uploadList_{num}\">";
+		preview_pic += "<img width=\""+picWidth+"\" height=\""+picWidth+"\""
+	preview_pic += "src=\"http://ww1.sinaimg.cn/thumbnail/{src}.jpg\""
+	preview_pic += "picid=\"da66c124jw1el0dmjnemvj200w0owmxg\">"
+		preview_pic += "<div style=\"width: 436px; height: 418px;\""
+	preview_pic += "class=\"pic-reload iconf loading hid\" order=\"0\">"
+		preview_pic += "<p class=\"hid\">重新上传</p>"
+		preview_pic += "</div>"
+		preview_pic += "<span style=\"left: 414px;\""
+	preview_pic += "class=\"pic-dele iconf iconf_navbar_close\" order=\"0\"></span>"
+		preview_pic += "</div>";
+
+		var picPath = "";
+
+		function getPicPath() {
+			
+			// 后台查询数据
+			//picPath = "D:/--maven--/--src--/WeiboPlat/assets/images/weibo/signin/icon.png";
+			picPath = WeibosController.getPicPath();
+			if (null == picPath || picPath == "") {
+				setTimeout(function() {
+					getPicPath();
+				}, 500);
+			} else {
+				// 图片预览区域
+				if (picPath != "cancel") {
+					$("#wb_content").val(picPath);
+					$("#pic_preview_box").prepend(
+							preview_pic.replace("{src}", picPath));
+					// 关闭loading !!!!!!!
+				} else {
+					$("#wb_content").val(picPath);
+				}
+
+				// 获取到数据后，恢复初始化状态
+				WeibosController.setPicPath("");
+				picPath = "";
+			}
+		}
+
+		function addPic() {
+			try {
+				// 通知后台获取图片 + 上传图片
+				WeibosController.addPic();
+
+				// 开始loading !!!!!!!
+
+				getPicPath();
+			} catch (e) {
+				$("#wb_content").val(e);
+			}
+		}
+	</script>
+</body>
+</html>
